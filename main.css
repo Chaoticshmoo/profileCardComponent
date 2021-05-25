@@ -6,8 +6,13 @@
     --bg: hsl(185, 75%, 39%);
     --shadow: hsl(0, 0%, 59%);
     --content-clr: #fff;
-    --border-rad: 10px;
+    --bg-transparent: hsla(185, 70%, 38%, 0.3);
+
+    /* Fonts */
     --fs-name-stats: 18px;
+    
+    /* Misc. */
+    --border-rad: 10px;
 }
 
 html {
@@ -20,12 +25,14 @@ html {
 body {
     background-color: var(--bg);
     background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
-    background-position: 0 0, 800 400;
+    background-position: -225px -600px, 680px 300px;
     background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
 }
 
 h1, h2 {
     font-size: var(--fs-name-stats);
+    color: var(--mainColor);
 }
 
 .container {
@@ -34,7 +41,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10% auto;
+    margin: 10% auto 10px auto;
     min-width: 275px;
     max-width: 300px;
 }
@@ -48,31 +55,80 @@ h1, h2 {
     border-top-right-radius: var(--border-rad);
 }
 
-.info {
-    
+.info h1 {
+    display: inline-block;
+    margin-right: 0.3rem;
+    margin-bottom: 0;
+    font-weight: 700;
 }
 
 .age {
     display: inline;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--labels);
+}
+
+.location {
+    color: var(--labels);
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 0.7rem;
 }
 
 .container img {
     /* position: absolute; */
-    border: 3px solid var(--content-clr);
+    border: 5px solid var(--content-clr);
     border-radius: 50%;
-    margin-top: -50px;
+    margin-top: -53px;
     
 }
 
 .stats {
-    border-top: 1px solid var(--bg);
+    border-top: 1px solid var(--bg-transparent);
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.3rem 0;
+    margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .stats div {
     width: 10%;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    color: var(--labels);
+    margin: 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats h2 {
+    margin: 0.5rem auto;
+    letter-spacing: 0;
+}
+
+.attribution {
+    font-size: 0.6rem;
     text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 375px) {
+    body {
+        background-size: 150%;
+        background-position: -400px -250px, 150px 350px;
+    }
+
+    .container {
+        margin-top: 40%;
+    }
+    
 }
