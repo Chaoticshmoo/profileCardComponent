@@ -129,6 +129,12 @@ h1, h2 {
 
     .container {
         margin-top: 40%;
+    }   
+}
+
+@media (min-width: 1441px) {
+    body {
+        background-size: ;
+        background-position: -50px -450px, 925px 350px;
     }
-    
 }
